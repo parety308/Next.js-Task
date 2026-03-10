@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "title": "Next.js for Beginners",
+        "shortDescription": "Learn the basics of Next.js and build modern React apps.",
+        "description": "This course teaches the fundamentals of Next.js including routing, server components, API routes, and deployment. By the end, you will build and deploy a real-world project.",
+        "price": 49,
+        "date": "2026-01-10",
+        "priority": "High",
+        "category": "Web Development",
+        "instructor": "John Smith",
+        "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee"
+    },
+    {
+        "id": 2,
+        "title": "React Mastery",
+        "shortDescription": "Become confident building advanced React applications.",
+        "description": "This course covers React hooks, context API, performance optimization, and component architecture to help you build scalable applications.",
+        "price": 59,
+        "date": "2026-01-15",
+        "priority": "Medium",
+        "category": "Web Development",
+        "instructor": "Sarah Johnson",
+        "image": "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2"
+    },
+    {
+        "id": 3,
+        "title": "MongoDB for Developers",
+        "shortDescription": "Understand MongoDB database design and operations.",
+        "description": "Learn how to design schemas, perform CRUD operations, create indexes, and connect MongoDB with modern web applications.",
+        "price": 39,
+        "date": "2026-01-20",
+        "priority": "Low",
+        "category": "Database",
+        "instructor": "Michael Brown",
+        "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c"
+    },
+    {
+        "id": 4,
+        "title": "Full Stack Web Development",
+        "shortDescription": "Build complete web applications from frontend to backend.",
+        "description": "This course teaches React, Node.js, Express, and MongoDB so you can create full stack web applications and deploy them to production.",
+        "price": 79,
+        "date": "2026-02-01",
+        "priority": "High",
+        "category": "Full Stack",
+        "instructor": "David Lee",
+        "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+    },
+    {
+        "id": 5,
+        "title": "UI/UX Design Fundamentals",
+        "shortDescription": "Learn the basics of user interface and user experience design.",
+        "description": "Understand design principles, wireframing, prototyping, and user-centered design to create better digital experiences.",
+        "price": 45,
+        "date": "2026-02-05",
+        "priority": "Medium",
+        "category": "Design",
+        "instructor": "Emma Wilson",
+        "image": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e"
+    },
+    {
+        "id": 6,
+        "title": "JavaScript Advanced Concepts",
+        "shortDescription": "Master closures, promises, async programming and more.",
+        "description": "Dive deep into JavaScript internals and learn advanced techniques used by professional developers.",
+        "price": 55,
+        "date": "2026-02-12",
+        "priority": "High",
+        "category": "Programming",
+        "instructor": "Daniel Martinez",
+        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c"
+    },
+    {
+        "id": 7,
+        "title": "Node.js Backend Development",
+        "shortDescription": "Build scalable backend APIs using Node.js and Express.",
+        "description": "Learn REST API development, authentication, middleware, and database integration using Node.js.",
+        "price": 65,
+        "date": "2026-02-20",
+        "priority": "Medium",
+        "category": "Backend",
+        "instructor": "Robert Taylor",
+        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31"
+    },
+    {
+        "id": 8,
+        "title": "TypeScript Complete Guide",
+        "shortDescription": "Learn TypeScript to write safer and scalable JavaScript.",
+        "description": "This course covers types, interfaces, generics, and advanced TypeScript features used in large projects.",
+        "price": 52,
+        "date": "2026-02-25",
+        "priority": "Low",
+        "category": "Programming",
+        "instructor": "Sophia Anderson",
+        "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4"
+    },
+    {
+        "id": 9,
+        "title": "Responsive Web Design",
+        "shortDescription": "Create websites that work perfectly on all devices.",
+        "description": "Learn CSS Flexbox, Grid, media queries, and modern responsive techniques to design mobile-friendly websites.",
+        "price": 35,
+        "date": "2026-03-01",
+        "priority": "Medium",
+        "category": "Frontend",
+        "instructor": "James White",
+        "image": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8"
+    }
+]

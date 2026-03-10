@@ -1,37 +1,33 @@
 'use client'
-import { useRouter } from 'next/navigation';
-import React from 'react';
+import { useRouter } from 'next/navigation'
 
 const Banner = () => {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
-    <section className="bg-gradient-to-r from-sky-400 to-sky-200 rounded-xl text-center space-y-6 max-w-7xl mx-auto px-10 py-16 mt-6">
+    <section className="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-800 rounded-2xl shadow-xl text-center space-y-8 px-8 py-20 mt-10">
 
-      {/* Headline */}
-      <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-        Learn Skills That Shape Your Future
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+        Learn Skills That Shape <span className="text-purple-400">Your Future</span>
       </h1>
 
-      {/* Subtitle */}
-      <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+      <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
         Explore high quality programming and technology courses.
         Start learning today and boost your career with practical skills.
       </p>
 
-      {/* Buttons */}
-      <div className="flex justify-center gap-4 mt-4">
+      <div className="flex justify-center gap-4 pt-4 flex-wrap">
 
         <button
           onClick={() => router.push('/courses')}
-          className="bg-purple-700 text-white px-6 py-2 rounded-lg hover:bg-purple-900 transition"
+          className="bg-purple-400 text-black font-medium px-6 py-3 rounded-lg hover:bg-emerald-500 transition duration-200 shadow-md"
         >
           Browse Courses
         </button>
 
         <button
           onClick={() => router.push('/add-course')}
-          className="bg-amber-400 text-black px-6 py-2 rounded-lg hover:bg-amber-500 transition"
+          className="bg-slate-700 text-white font-medium px-6 py-3 rounded-lg hover:bg-emerald-500 transition duration-200 border border-slate-600"
         >
           Add Course
         </button>
@@ -39,7 +35,7 @@ const Banner = () => {
       </div>
 
     </section>
-  );
-};
+  )
+}
 
-export default Banner;
+export default Banner
