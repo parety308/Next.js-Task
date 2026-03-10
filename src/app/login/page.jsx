@@ -2,16 +2,23 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useCourses } from '../providers/CourseProvider';
 
 const LoginPage = () => {
+    const { signIn } = useCourses();
+    const router = useRouter();
     const handleLogin = (event) => {
         event.preventDefault();
 
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-
-        console.log('Login attempt:', { email, password });
+        signIn(email, password)
+            .then(res => {
+                console.log(res.user);
+                router.push('/');
+            })
         form.reset();
     };
 

@@ -1,14 +1,9 @@
 'use client'
+import { useCourses } from "@/app/providers/CourseProvider";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
 
 const PopularCourses = () => {
-    const [coursesData, setCoursesData] = useState([]);
-    useEffect(() => {
-        fetch("/data.json")
-            .then(res => res.json())
-            .then(data => setCoursesData(data));
-    }, []);
+    const { courses: coursesData } = useCourses();
     const courses = coursesData.sort((a, b) => b.priority - a.priority).slice(0, 4);
     return (
         <section className="py-20 px-4 sm:px-6 max-w-7xl mx-auto">

@@ -3,17 +3,22 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { useCourses } from '@/app/providers/CourseProvider'
 
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user } = useCourses();
 
     const navLinks = [
         { href: '/', label: 'Home' },
         { href: '/courses', label: 'Courses' },
         { href: '/add-courses', label: 'Add Course' },
         { href: '/manage-courses', label: 'Manage Courses' },
-        { href: '/about-us', label: 'About' },
-    ]
+        { href: '/about', label: 'About' },
+    ];
+    const handleLogOut = () => {
+
+    }
 
     return (
         <header className="bg-slate-900/90 backdrop-blur border-b border-slate-800 sticky top-0 z-50">
@@ -40,22 +45,35 @@ const Navbar = () => {
                         </Link>
                     ))}
                 </div>
-
                 <div className="hidden md:flex items-center gap-3">
-                    <Link
-                        href="/login"
-                        className="px-4 py-2 rounded-lg border border-purple-400 text-purple-400 hover:bg-emerald-400 hover:text-black transition"
-                    >
-                        Login
-                    </Link>
+                    {
+                        user ? (
+                            <button
+                                onClick={handleLogOut}
+                                className="px-4 py-2 rounded-lg bg-purple-500  text-white hover:bg-emerald-600 transition font-medium cursor-pointer"
+                            >
+                                Sign Out
+                            </button>
+                        ) : (
+                            <div className="flex gap-3">
+                                <Link
+                                    href="/login"
+                                    className="px-4 py-2 rounded-lg border border-purple-400 text-purple-400 hover:bg-emerald-400 hover:text-black transition"
+                                >
+                                    Login
+                                </Link>
 
-                    <Link
-                        href="/register"
-                        className="px-4 py-2 rounded-lg bg-purple-400 text-black hover:bg-emerald-500 transition font-medium"
-                    >
-                        Register
-                    </Link>
+                                <Link
+                                    href="/register"
+                                    className="px-4 py-2 rounded-lg bg-purple-400 text-black hover:bg-emerald-500 transition font-medium"
+                                >
+                                    Register
+                                </Link>
+                            </div>
+                        )
+                    }
                 </div>
+
 
                 <button
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
