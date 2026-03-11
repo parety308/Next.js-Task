@@ -1,13 +1,14 @@
 'use client'
-
 import Link from 'next/link'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { useCourses } from '@/app/providers/CourseProvider'
+import { useRouter } from 'next/navigation'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const { user } = useCourses();
+    const { user, logOut } = useCourses();
+    const router = useRouter();
 
     const navLinks = [
         { href: '/', label: 'Home' },
@@ -17,7 +18,10 @@ const Navbar = () => {
         { href: '/about', label: 'About' },
     ];
     const handleLogOut = () => {
-
+        logOut()
+            .then(() => {
+                router.push('/')
+            })
     }
 
     return (

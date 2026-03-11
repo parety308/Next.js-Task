@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../lib/firebase";
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 
 const CourseContext = createContext();
 const provider = new GoogleAuthProvider();
@@ -10,7 +10,7 @@ const provider = new GoogleAuthProvider();
 export const CourseProvider = ({ children }) => {
     const [courses, setCourses] = useState([]);
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState();
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch("/data.json")
@@ -53,6 +53,9 @@ export const CourseProvider = ({ children }) => {
     const signIn = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password);
     };
+    const logOut = () => {
+        return signOut(auth);
+    }
     return (
         <CourseContext.Provider
             value={{
@@ -64,7 +67,9 @@ export const CourseProvider = ({ children }) => {
                 signIn,
                 CreateUser,
                 signInGoogle,
-                user
+                user,
+                loading,
+                logOut
             }}
         >
             {children}

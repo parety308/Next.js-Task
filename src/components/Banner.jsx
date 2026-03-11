@@ -26,7 +26,7 @@ const Banner = () => {
         </button>
 
         <button
-          onClick={() => router.push('/add-course')}
+          onClick={() => router.push('/add-courses')}
           className="bg-slate-700 text-white font-medium px-6 py-3 rounded-lg hover:bg-emerald-500 transition duration-200 border border-slate-600"
         >
           Add Course
