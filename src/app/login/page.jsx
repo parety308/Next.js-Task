@@ -1,23 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { Suspense, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCourses } from "../providers/CourseProvider";
 
-const LoginPage = () => {
-  const { signIn, signInGoogle, user } = useCourses();
+function LoginContent() {
+  const { signIn, signInGoogle } = useCourses();
   const router = useRouter();
   const searchParams = useSearchParams();
 
   const redirect = searchParams.get("redirect") || "/";
   const [error, setError] = useState("");
-
-//   useEffect(() => {
-    // if (user) {
-    //   router.push("/");
-    // }
-//   }, [user, router]);
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -28,8 +22,7 @@ const LoginPage = () => {
     const password = form.password.value;
 
     signIn(email, password)
-      .then((res) => {
-        // console.log(res.user);
+      .then(() => {
         form.reset();
         router.push(redirect);
       })
@@ -71,7 +64,7 @@ const LoginPage = () => {
               name="email"
               type="email"
               placeholder="Enter your email"
-              className="w-full bg-slate-700 border border-slate-600 px-3 py-2 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-400"
+              className="w-full bg-slate-700 border border-slate-600 px-3 py-2 rounded-lg text-white"
               required
             />
           </div>
@@ -85,7 +78,7 @@ const LoginPage = () => {
               name="password"
               type="password"
               placeholder="Enter your password"
-              className="w-full bg-slate-700 border border-slate-600 px-3 py-2 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-400"
+              className="w-full bg-slate-700 border border-slate-600 px-3 py-2 rounded-lg text-white"
               required
             />
           </div>
@@ -119,6 +112,12 @@ const LoginPage = () => {
       </div>
     </section>
   );
-};
+}
 
-export default LoginPage;
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
+      <LoginContent />
+    </Suspense>
+  );
+}
